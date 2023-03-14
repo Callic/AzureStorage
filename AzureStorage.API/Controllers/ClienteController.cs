@@ -1,10 +1,7 @@
-﻿using Azure.Identity;
-using Azure.Storage.Blobs;
-using AzureStorage.API.Interfaces;
-using AzureStorage.API.Models;
+﻿using AzureStorage.API.Interfaces;
 using AzureStorage.API.ViewModel;
 using Microsoft.AspNetCore.Mvc;
-using System.Numerics;
+
 
 namespace AzureStorage.API.Controllers
 {
@@ -14,15 +11,16 @@ namespace AzureStorage.API.Controllers
     {
         private readonly IAzureBlobStorageClient _azureBlobStorageClient;
         private readonly IClienteService _clienteService;
+        
         public ClienteController(IAzureBlobStorageClient azureBlobStorageClient, IClienteService clienteService)
         {
             _azureBlobStorageClient = azureBlobStorageClient;
             _clienteService = clienteService;
+            
         }
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-
             return Ok();
         }
 
